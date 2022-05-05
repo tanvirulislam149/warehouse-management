@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
 .nav-bg {
-    background-color: rgb(241, 241, 241);
+    background-color: #ecf2f9;
+}
+
+.text-color {
+    color: #002266;
+}
+
+.nav-brand {
+    font-family: 'Abel', sans-serif;
+    font-size: 35px;
 }

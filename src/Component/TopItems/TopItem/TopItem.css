@@ -1,0 +1,25 @@
+.equal-card {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: #002266;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.update-btn {
+    font-weight: bold;
+    border: none;
+    background-color: #002266;
+    color: white;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
