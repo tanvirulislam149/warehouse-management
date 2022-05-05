@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+.banner p {
+    font-family: 'Abel', sans-serif;
+}
+
+.banner {
+    background-image: url("https://compactforktrucks.co.uk/wp-content/themes/mm-boilerplate/img/home_banner_still.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: darken;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
