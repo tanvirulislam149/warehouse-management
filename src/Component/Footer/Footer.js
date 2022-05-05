@@ -3,9 +3,12 @@ import forklift from "../../images/forklift.png";
 import "./Footer.css";
 
 const Footer = () => {
+    const date = new Date().getFullYear();
     return (
-        <div className='footer'>
+        <div className='footer text-center'>
             <p className='my-0 py-0 text-decoration-none text-white nav-brand fw-bold'><img style={{ height: "70px" }} src={forklift} alt="" /> DEPOT</p>
+            <p className='text-white'>Warehouse and Storage</p>
+            <p className='text-white mb-0'>Copyrights © {date} Depot. All Right Reserved. Developed By Tanvir</p>
         </div>
     );
 };
