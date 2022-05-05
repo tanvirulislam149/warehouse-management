@@ -7,7 +7,7 @@ const TopItem = ({ product }) => {
         <Col>
             <Card className='equal-card border-0'>
                 <div>
-                    <Card.Img className='w-100' variant="top" src={product.picture} />
+                    <Card.Img className='card-image' variant="top" src={product.picture} />
                 </div>
                 <div>
                     <Card.Body>
