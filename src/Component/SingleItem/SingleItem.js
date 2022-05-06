@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import "./TopItem.css";
 
-const TopItem = ({ product }) => {
+const SingleItem = ({ product }) => {
     return (
         <Col>
             <Card className='equal-card border-0'>
@@ -24,4 +23,4 @@ const TopItem = ({ product }) => {
     );
 };
 
-export default TopItem;
+export default SingleItem;
