@@ -8,7 +8,7 @@ const ItemDetail = () => {
     const [quantityNumber, setquantityNumber] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${params._id}`)
+        fetch(`http://localhost:5000/product/${params.id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -18,9 +18,21 @@ const ItemDetail = () => {
 
     const handleQuantity = () => {
         if (quantityNumber > 0) {
-            const quantity = quantityNumber;
-            const newQuantity = parseInt(quantity) - 1;
-            setquantityNumber(newQuantity);
+            fetch(`http://localhost:5000/updateQuantity/${params.id}`, {
+                method: "PUT", 
+                headers: {
+                    "content-type" : "application/json",
+                },
+                body: JSON.stringify({quantityNumber}),
+            })
+            .then((res) => res.json())
+            .then((json) => {
+                const quantity = quantityNumber;
+                const newQuantity = parseInt(quantity) - 1;
+                setquantityNumber(newQuantity);
+                console.log(json);
+            })
+            
         }
     }
     return (
@@ -32,7 +44,7 @@ const ItemDetail = () => {
                 <h6>Id: {item?._id}</h6>
                 <h6>Supplier: {item?.supplierName}</h6>
                 <h6>Price: ${item?.price}</h6>
-                {/* <h6>Quantity: {quantityNumber}</h6> */}
+                <h6>Quantity: {quantityNumber}</h6>
                 <h6 className={quantityNumber <= 0 ? 'text-danger fw-bold d-block' : "d-none"}>Sold Out</h6>
                 <Button onClick={handleQuantity} variant="primary">Delivered</Button>
             </Card.Body>
