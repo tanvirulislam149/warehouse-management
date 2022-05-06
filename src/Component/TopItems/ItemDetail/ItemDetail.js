@@ -4,23 +4,23 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetail = () => {
     let params = useParams();
-    const [item, setItem] = useState();
-    const [quantityState, setQuantityState] = useState(0);
+    const [item, setItem] = useState([]);
+    const [quantityNumber, setquantityNumber] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${params.id}`)
+        fetch(`http://localhost:5000/product/${params._id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
-                setQuantityState(data.quantity);
+                setquantityNumber(data.quantity);
             });
     }, [])
 
     const handleQuantity = () => {
-        if (quantityState > 0) {
-            const quantity = quantityState;
+        if (quantityNumber > 0) {
+            const quantity = quantityNumber;
             const newQuantity = parseInt(quantity) - 1;
-            setQuantityState(newQuantity);
+            setquantityNumber(newQuantity);
         }
     }
     return (
@@ -32,8 +32,8 @@ const ItemDetail = () => {
                 <h6>Id: {item?._id}</h6>
                 <h6>Supplier: {item?.supplierName}</h6>
                 <h6>Price: ${item?.price}</h6>
-                <h6>Quantity: {quantityState}</h6>
-                <h6 className={quantityState <= 0 ? 'text-danger fw-bold d-block' : "d-none"}>Sold Out</h6>
+                {/* <h6>Quantity: {quantityNumber}</h6> */}
+                <h6 className={quantityNumber <= 0 ? 'text-danger fw-bold d-block' : "d-none"}>Sold Out</h6>
                 <Button onClick={handleQuantity} variant="primary">Delivered</Button>
             </Card.Body>
         </Card>
