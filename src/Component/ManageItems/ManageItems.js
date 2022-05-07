@@ -1,7 +1,8 @@
-import { faArrowRight, faRemoveFormat, faRemo, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ManageItems = () => {
     const [products, setProducts] = useState([]);
@@ -23,6 +24,11 @@ const ManageItems = () => {
             });
     }
 
+    let navigate = useNavigate();
+    const goToAddItem = () => {
+        navigate("/addItem");
+    }
+
 
     return (
         <div className='container my-5'>
@@ -34,15 +40,15 @@ const ManageItems = () => {
                         products.map(product =>
                             <tr className='border-1' key={product._id}>
                                 <th className='text-center'><img style={{ width: "50px" }} src={product.picture} alt="" /></th>
-                                <th className='text-center px-3 py-3'>{product.name}</th>
-                                <th className='text-center px-3'>Price: ${product.price}</th>
-                                <th className='text-center fs-1 px-3'><button onClick={() => deleteItem(product._id)} className='border-0 bg-white text-danger'><FontAwesomeIcon icon={faTrashAlt} /></button></th>
+                                <th className='text-center px-1 px-md-3 py-3'>{product.name}</th>
+                                <th className='text-center px-1 px-md-3'>Price: ${product.price}</th>
+                                <th className='text-center fs-1 px-1 px-md-3'><button onClick={() => deleteItem(product._id)} className='border-0 bg-white text-danger'><FontAwesomeIcon icon={faTrashAlt} /></button></th>
                             </tr>
                         )
                     }
                 </tbody>
             </table>
-            <Button className='fw-bold ms-auto d-block mt-5' variant='primary'>Add New Item <FontAwesomeIcon icon={faArrowRight} />
+            <Button onClick={goToAddItem} className='fw-bold ms-auto d-block mt-5' variant='primary'>Add New Item <FontAwesomeIcon icon={faArrowRight} />
             </Button>
         </div>
     );
