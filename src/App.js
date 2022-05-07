@@ -9,6 +9,7 @@ import ItemDetail from './Component/TopItems/ItemDetail/ItemDetail';
 import AddItem from './Component/AddItem/AddItem';
 import LogIn from './Component/LogIn/LogIn';
 import Register from './Component/Register/Register';
+import RequireAuth from './Component/RequiredAuth';
 
 function App() {
   return (
@@ -16,11 +17,11 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/manageItems" element={<ManageItems></ManageItems>}></Route>
-        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
-        <Route path="/product/:id" element={<ItemDetail></ItemDetail>}></Route>
+        <Route path="/manageItems" element={<RequireAuth><ManageItems></ManageItems></RequireAuth>}></Route>
+        <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
+        <Route path="/product/:id" element={<RequireAuth><ItemDetail></ItemDetail></RequireAuth>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/myItems" element={<MyItems></MyItems>}></Route>
+        <Route path="/myItems" element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>

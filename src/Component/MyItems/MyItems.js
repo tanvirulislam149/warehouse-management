@@ -1,12 +1,17 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const MyItems = () => {
+    const [user, loading, error] = useAuthState(auth);
+
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://rocky-oasis-63837.herokuapp.com/myitems?user=Shuvo")
+        fetch(`https://rocky-oasis-63837.herokuapp.com/myitems?user=${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
