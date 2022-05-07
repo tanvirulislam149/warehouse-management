@@ -1,0 +1,11 @@
+.input-field {
+    width: 25%;
+}
+
+
+@media screen and (max-width: 576px) {
+
+    .input-field {
+        width: 75%;
+    }
+}
