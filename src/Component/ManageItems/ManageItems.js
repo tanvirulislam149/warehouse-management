@@ -41,7 +41,7 @@ const ManageItems = () => {
                         products.map(product =>
                             <tr className='border-1' key={product._id}>
                                 <th className='text-center'><img style={{ width: "50px" }} src={product.picture} alt="" /></th>
-                                <th className='text-center px-1 px-md-3 py-3'>{product.name}</th>
+                                <th className='text-center px-1 px-md-3 py-3'>{product.name.toUpperCase()}</th>
                                 <th className='text-center px-1 px-md-3'>Price: ${product.price}</th>
                                 <th className='text-center fs-1 px-1 px-md-3'><button onClick={() => deleteItem(product._id)} className='border-0 bg-white text-danger'><FontAwesomeIcon icon={faTrashAlt} /></button></th>
                             </tr>

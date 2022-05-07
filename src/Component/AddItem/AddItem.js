@@ -6,6 +6,8 @@ import "./AddItem.css";
 const AddItem = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
+        data.name = data.name.toLowerCase();
+        console.log(data);
         fetch(`http://localhost:5000/insertItem`, {
             method: "POST",
             body: JSON.stringify(data),

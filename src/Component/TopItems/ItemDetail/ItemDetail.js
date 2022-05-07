@@ -56,7 +56,7 @@ const ItemDetail = () => {
         <Card className='w-50 mx-auto border-0'>
             <Card.Img className='w-50 mx-auto' variant="top" src={item?.picture} />
             <Card.Body>
-                <Card.Title>{item?.name}</Card.Title>
+                <Card.Title>{item?.name.toUpperCase()}</Card.Title>
                 <Card.Text>{item?.description}</Card.Text>
                 <h6>Id: {item?._id}</h6>
                 <h6>Supplier: {item?.supplierName}</h6>

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import "./TopItem.css";
 
 const TopItem = (props) => {
-    const {item} = props;
+    const { item } = props;
     let navigate = useNavigate();
     const goToDetail = (id) => {
         navigate(`/product/${id}`)
@@ -17,7 +17,7 @@ const TopItem = (props) => {
                 </div>
                 <div>
                     <Card.Body>
-                        <Card.Title className='title fw-bold'>{item?.name}</Card.Title>
+                        <Card.Title className='title fw-bold'>{item?.name.toUpperCase()}</Card.Title>
                         <Card.Text className='text-justify'>{item?.shortDescription}</Card.Text>
                         <h6>Price: ${item?.price}</h6>
                         <h6>Quantity: {item?.quantity}</h6>
