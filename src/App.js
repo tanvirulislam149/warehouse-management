@@ -8,6 +8,7 @@ import ManageItems from './Component/ManageItems/ManageItems';
 import ItemDetail from './Component/TopItems/ItemDetail/ItemDetail';
 import AddItem from './Component/AddItem/AddItem';
 import LogIn from './Component/LogIn/LogIn';
+import Register from './Component/Register/Register';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/myItems" element={<MyItems></MyItems>}></Route>
         <Route path="/login" element={<LogIn></LogIn>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
     </div>
   );
