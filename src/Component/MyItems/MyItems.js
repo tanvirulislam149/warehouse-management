@@ -6,14 +6,14 @@ const MyItems = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/myitems?user=Shuvo")
+        fetch("https://rocky-oasis-63837.herokuapp.com/myitems?user=Shuvo")
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
 
     const deleteItem = (id) => {
         alert("Are You Sure Want To Delete This Item?");
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://rocky-oasis-63837.herokuapp.com/product/${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())

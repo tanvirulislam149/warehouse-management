@@ -8,7 +8,7 @@ const AddItem = () => {
     const onSubmit = data => {
         data.name = data.name.toLowerCase();
         console.log(data);
-        fetch(`http://localhost:5000/insertItem`, {
+        fetch(`https://rocky-oasis-63837.herokuapp.com/insertItem`, {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

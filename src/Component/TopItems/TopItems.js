@@ -11,7 +11,7 @@ const TopItems = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/items")
+        fetch("https://rocky-oasis-63837.herokuapp.com/items")
             .then(res => res.json())
             .then(data => setItems(data));
     }, [])

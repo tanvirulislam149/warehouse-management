@@ -8,7 +8,7 @@ const ItemDetail = () => {
     const [quantityNumber, setquantityNumber] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${params.id}`)
+        fetch(`https://rocky-oasis-63837.herokuapp.com/product/${params.id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -18,7 +18,7 @@ const ItemDetail = () => {
 
     const handleQuantity = () => {
         if (quantityNumber > 0) {
-            fetch(`http://localhost:5000/updateQuantity/${params.id}`, {
+            fetch(`https://rocky-oasis-63837.herokuapp.com/updateQuantity/${params.id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json",
@@ -38,7 +38,7 @@ const ItemDetail = () => {
     const restockSubmit = (event) => {
         event.preventDefault();
         let restockNumber = parseInt(event.target.restock.value);
-        fetch(`http://localhost:5000/restockQuantity/${params.id}`, {
+        fetch(`https://rocky-oasis-63837.herokuapp.com/restockQuantity/${params.id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
