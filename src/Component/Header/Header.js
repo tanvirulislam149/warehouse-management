@@ -14,6 +14,7 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Link className='text-decoration-none text-color fw-bold me-3' to="/manageItems">Manage Items</Link>
+                        <Link className='text-decoration-none text-color fw-bold me-3' to="/addItem">Add Item</Link>
                         <Link className='text-decoration-none text-color fw-bold me-3' to="/blogs">Blogs</Link>
                         <Link className='text-decoration-none text-color fw-bold me-3' to="/myItems">My Items</Link>
                     </Nav>

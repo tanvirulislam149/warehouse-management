@@ -14,6 +14,7 @@ const ManageItems = () => {
     }, [])
 
     const deleteItem = (id) => {
+        alert("Are You Sure Want To Delete This Item?");
         fetch(`http://localhost:5000/product/${id}`, {
             method: "DELETE",
         })
