@@ -12,6 +12,7 @@ import Register from './Component/Register/Register';
 import RequireAuth from './Component/RequiredAuth';
 import PageNotFound from './Component/PageNotFound';
 import Footer from "./Component/Footer/Footer";
+import AboutUs from './Component/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/myItems" element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
