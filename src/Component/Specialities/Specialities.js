@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Specialities.css";
+import storage from "../../images/storage.jpg";
 
 const Specialities = () => {
     return (
@@ -28,7 +29,7 @@ const Specialities = () => {
                     <h2 className='nav-brand fw-bold'>Storage</h2>
                     <p className='special-text fs-4' >We provide storage from general goods to automotive parts for long or short-term storage</p>
                 </div>
-                <img className='storage' src="https://thumbs.dreamstime.com/b/warehouse-goods-storage-icon-isolated-illustration-74106522.jpg" alt="" />
+                <img className='storage' src={storage} alt="" />
             </div>
         </div>
     );

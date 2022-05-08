@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import packing from "../../images/packing.jpg";
 
 const Services = () => {
     return (
@@ -54,7 +55,7 @@ const Services = () => {
                 </Col>
                 <Col>
                     <Card className='border-0 h-100'>
-                        <Card.Img className='h-100' variant="top" src="https://thumbs.dreamstime.com/b/warehouse-worker-packing-parcel-scotch-tape-logistic-business-shipment-people-concept-worker-safety-vest-packing-116652515.jpg" />
+                        <Card.Img className='h-100' variant="top" src={packing} />
                         <Card.Body className='p-0'>
                             <hr style={{ height: "5px", color: "#002266", width: "100px", borderRadius: "5px" }} />
                             <Card.Title style={{ fontSize: "0px" }} className='nav-brand text-color fs-3 fw-bold fs-3 fw-bold'>Packing</Card.Title>

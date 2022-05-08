@@ -10,6 +10,7 @@ import AddItem from './Component/AddItem/AddItem';
 import LogIn from './Component/LogIn/LogIn';
 import Register from './Component/Register/Register';
 import RequireAuth from './Component/RequiredAuth';
+import PageNotFound from './Component/PageNotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/myItems" element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
     </div>
   );
