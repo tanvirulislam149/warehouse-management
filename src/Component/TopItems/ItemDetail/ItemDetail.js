@@ -39,7 +39,7 @@ const ItemDetail = () => {
 
     const restockSubmit = (event) => {
         event.preventDefault();
-        let restockNumber = parseInt(event.target.restock.value);
+        let restockNumber = (quantityNumber + (parseInt(event.target.restock.value)));
         fetch(`https://rocky-oasis-63837.herokuapp.com/restockQuantity/${params.id}`, {
             method: "PUT",
             headers: {
