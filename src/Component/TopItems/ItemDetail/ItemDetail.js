@@ -1,6 +1,8 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ItemDetail = () => {
     let params = useParams();
@@ -52,6 +54,11 @@ const ItemDetail = () => {
         event.target.restock.value = "";
     }
 
+    let navigate = useNavigate();
+    const goToManageItems = () => {
+        navigate("/manageItems");
+    }
+
     return (
         <Card className='w-50 mx-auto border-0'>
             <Card.Img className='w-50 mx-auto' variant="top" src={item?.picture} />
@@ -69,6 +76,8 @@ const ItemDetail = () => {
                     <input className='border-0 bg-success text-white fw-bold mt-3' type="submit" value="Restock" />
                 </form>
             </Card.Body>
+            <Button onClick={goToManageItems} className='fw-bold ms-auto d-block mt-5' variant='primary'>Manage Items <FontAwesomeIcon icon={faArrowRight} />
+            </Button>
         </Card>
     );
 };

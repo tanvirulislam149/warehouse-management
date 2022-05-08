@@ -11,6 +11,7 @@ import LogIn from './Component/LogIn/LogIn';
 import Register from './Component/Register/Register';
 import RequireAuth from './Component/RequiredAuth';
 import PageNotFound from './Component/PageNotFound';
+import Footer from "./Component/Footer/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

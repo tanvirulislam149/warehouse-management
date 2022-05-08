@@ -26,12 +26,13 @@ const Header = () => {
                     <Nav className="ms-auto">
                         <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/blogs">Blogs</Link>
                         {
-                            user ? <div>
-                                <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/manageItems">Manage Items</Link>
-                                <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/addItem">Add Item</Link>
-                                <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/myItems">My Items</Link>
-                                <button onClick={handleSignOut} className='update-btn'>Log Out</button>
-                            </div> :
+                            user ?
+                                <>
+                                    <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/manageItems">Manage Items</Link>
+                                    <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/addItem">Add Item</Link>
+                                    <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/myItems">My Items</Link>
+                                    <button onClick={handleSignOut} className='update-btn'>Log Out</button>
+                                </> :
                                 <button className='update-btn'><Link className='text-white text-decoration-none' to="/login">Login</Link></button>
                         }
                     </Nav>
