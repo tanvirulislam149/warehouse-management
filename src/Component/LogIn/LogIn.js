@@ -61,12 +61,23 @@ const LogIn = () => {
 
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         setEmail(email);
         const password = event.target.password.value;
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        fetch(`https://rocky-oasis-63837.herokuapp.com/getToken`, {
+            method: "POST",
+            body: JSON.stringify({ email }),
+            headers: {
+                "content-type": "application/json",
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem("accessToken", data.token);
+            });
     }
 
 

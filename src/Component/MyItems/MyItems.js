@@ -1,5 +1,6 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
@@ -13,7 +14,11 @@ const MyItems = () => {
     const [data, setData] = useState(false);
 
     useEffect(() => {
-        fetch(`https://rocky-oasis-63837.herokuapp.com/myitems?user=${user?.email}`)
+        fetch(`https://rocky-oasis-63837.herokuapp.com/myitems?user=${user?.email}`, {
+            headers: {
+                authorization: localStorage.getItem("accessToken")
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -33,6 +38,9 @@ const MyItems = () => {
                 });
         }
     }
+    const handleSignOut = () => {
+        signOut(auth);
+    }
 
 
     return (
@@ -45,14 +53,15 @@ const MyItems = () => {
                         <table className='w-50 mx-auto'>
                             <tbody>
                                 {
-                                    products.map(product =>
-                                        <tr className='border-1' key={product._id}>
-                                            <th className='text-center'><img style={{ width: "50px" }} src={product.picture} alt="" /></th>
-                                            <th className='text-center px-1 px-md-3 py-3'>{product.name.toUpperCase()}</th>
-                                            <th className='text-center px-1 px-md-3'>Price: ${product.price}</th>
-                                            <th className='text-center fs-1 px-1 px-md-3'><button onClick={() => deleteItem(product._id)} className='border-0 bg-white text-danger'><FontAwesomeIcon icon={faTrashAlt} /></button></th>
-                                        </tr>
-                                    )
+                                    products.message ? handleSignOut() :
+                                        products.map(product =>
+                                            <tr className='border-1' key={product._id}>
+                                                <th className='text-center'><img style={{ width: "50px" }} src={product.picture} alt="" /></th>
+                                                <th className='text-center px-1 px-md-3 py-3'>{product.name.toUpperCase()}</th>
+                                                <th className='text-center px-1 px-md-3'>Price: ${product.price}</th>
+                                                <th className='text-center fs-1 px-1 px-md-3'><button onClick={() => deleteItem(product._id)} className='border-0 bg-white text-danger'><FontAwesomeIcon icon={faTrashAlt} /></button></th>
+                                            </tr>
+                                        )
                                 }
                             </tbody>
                         </table>
