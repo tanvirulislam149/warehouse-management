@@ -82,6 +82,7 @@ const Register = () => {
     }
     return (
         <div className='text-center'>
+            <img className='w-100' style={{ height: "40vh" }} src="https://www.omsguru.com/wp-content/uploads/2019/11/02-1.jpg" alt="" />
             <h1 className='text-center fw-bold text-color mt-5 item-header'>Please Register</h1>
             <hr className='mb-5 mx-auto' style={{ height: "5px", color: "#002266", width: "100px", borderRadius: "5px" }} />
             <form onSubmit={handleRegister} id="form">

@@ -8,7 +8,25 @@
     color: #002266;
 }
 
-.nav-brand {
+.nav-font {
     font-family: 'Abel', sans-serif;
-    font-size: 35px;
+}
+
+.header-bg {
+    background-color: none;
+}
+
+.link-color {
+    color: white;
+}
+
+@media screen and (max-width: 576px) {
+    .header-bg {
+        background-color: white;
+        text-align: center;
+    }
+
+    .link-color {
+        color: #002266;
+    }
 }

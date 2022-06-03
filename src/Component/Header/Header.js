@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./Header.css";
@@ -10,31 +10,42 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
+    const [navbar, setNavbar] = useState(true);
 
     const handleSignOut = () => {
         signOut(auth);
     }
 
 
+    window.onscroll = function () {
+        const position = window.pageYOffset;
+        if (position < 100) {
+            setNavbar(true);
+        }
+        else {
+            setNavbar(false);
+        }
+    }
+
 
     return (
-        <Navbar className='py-0 nav-bg sticky-top' expand="lg">
+        <Navbar style={{ position: "fixed", top: 0, width: "100%", zIndex: 50 }} className={`${navbar ? "" : "bg-white"} nav-font`} expand="lg">
             <Container>
-                <Navbar.Brand className='my-0 py-0'><Link className='text-decoration-none text-color nav-brand fw-bold' to="/"> <img style={{ height: "70px" }} src={forklift} alt="" /> DEPOT</Link></Navbar.Brand>
+                <Navbar.Brand className='my-0 py-0'><Link className={`${navbar ? "text-white" : "text-color"} text-decoration-none fw-bold fs-1`} to="/"> <img style={{ height: "70px" }} src={forklift} alt="" /> DEPOT</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/blogs">Blogs</Link>
-                        <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/aboutUs">About Us</Link>
+                    <Nav className="ms-auto header-bg">
+                        <Link className={`${navbar ? "link-color" : "text-color"} text-decoration-none fs-4 me-3 my-auto`} to="/blogs">Blogs</Link>
+                        <Link className={`${navbar ? "link-color" : "text-color"} text-decoration-none text-color fs-4 me-3 my-auto`} to="/aboutUs">About Us</Link>
                         {
                             user ?
                                 <>
-                                    <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/manageItems">Manage Items</Link>
-                                    <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/addItem">Add Item</Link>
-                                    <Link className='text-decoration-none text-color fw-bold me-3 my-auto' to="/myItems">My Items</Link>
-                                    <button onClick={handleSignOut} className='update-btn'>Log Out</button>
+                                    <Link className={`${navbar ? "link-color" : "text-color"} text-decoration-none text-color fs-4 me-3 my-auto`} to="/manageItems">Manage Items</Link>
+                                    <Link className={`${navbar ? "link-color" : "text-color"} text-decoration-none text-color fs-4 me-3 my-auto`} to="/addItem">Add Item</Link>
+                                    <Link className={`${navbar ? "link-color" : "text-color"} text-decoration-none text-color fs-4 me-3 my-auto`} to="/myItems">My Items</Link>
+                                    <button onClick={handleSignOut} className="update-btn">Log Out</button>
                                 </> :
-                                <button className='update-btn'><Link className='text-white text-decoration-none' to="/login">Login</Link></button>
+                                <button className='update-btn'><Link className="text-white text-decoration-none" to="/login">Login</Link></button>
                         }
                     </Nav>
                 </Navbar.Collapse>

@@ -8,9 +8,10 @@
     background-image: url("https://compactforktrucks.co.uk/wp-content/themes/mm-boilerplate/img/home_banner_still.jpg");
     background-attachment: fixed;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.0);
     background-blend-mode: darken;
     height: 100vh;
+    width: 100%;
     color: white;
     text-align: center;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import "./Specialities.css";
 import storage from "../../images/storage.jpg";
+import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Specialities = () => {
     return (
@@ -31,6 +33,13 @@ const Specialities = () => {
                 </div>
                 <img className='storage' src={storage} alt="" />
             </div>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                    <div style={{ height: 10 }}>
+                        {isVisible ? <CountUp end={12323} /> : null}
+                    </div>
+                )}
+            </VisibilitySensor>
         </div>
     );
 };

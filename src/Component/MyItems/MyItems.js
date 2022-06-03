@@ -45,6 +45,7 @@ const MyItems = () => {
 
     return (
         <div>
+            <img className='w-100' style={{ height: "40vh" }} src="https://www.omsguru.com/wp-content/uploads/2019/11/02-1.jpg" alt="" />
             {
                 data ?
                     <>
