@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import Modal from "react-bootstrap/Modal";
+import { FaHome } from "react-icons/fa";
 
 const ManageItems = () => {
    const [products, setProducts] = useState([]);
@@ -29,9 +30,6 @@ const ManageItems = () => {
    };
 
    const deleteItem = () => {
-      // setShow(true);
-      // if (deleteModal) {
-      console.log(deleteId);
       fetch(`https://morning-retreat-07507.herokuapp.com/product/${deleteId}`, {
          method: "DELETE",
       })
@@ -43,7 +41,6 @@ const ManageItems = () => {
             setProducts(newProducts);
          });
       handleClose();
-      // }
    };
 
    let navigate = useNavigate();
@@ -59,11 +56,53 @@ const ManageItems = () => {
             src="https://i.ibb.co/VNHKC7S/bg.jpg"
             alt=""
          />
+         <div
+            style={{
+               position: "absolute",
+               top: "120px",
+               left: "45%",
+               color: "white",
+            }}
+            className="nav-font"
+         >
+            <h1 style={{ fontWeight: 700 }}>MANAGE ITEMS</h1>
+         </div>
+         <div
+            style={{
+               position: "absolute",
+               top: "180px",
+               left: "47%",
+               color: "white",
+            }}
+         >
+            <div className="d-flex">
+               <FaHome style={{ height: "20px", width: "20px" }} />
+               <p
+                  style={{
+                     fontSize: "20px",
+                     lineHeight: 0.9,
+                     marginLeft: "10px",
+                  }}
+               >
+                  /
+               </p>
+               <p
+                  style={{
+                     fontSize: "20px",
+                     lineHeight: 1,
+                     marginLeft: "10px",
+                  }}
+                  className="nav-font"
+               >
+                  MANAGE ITEMS
+               </p>
+            </div>
+         </div>
          <div className="container my-5">
             {data ? (
                <>
                   <h1 className="text-center fw-bold text-color mt-5 item-header">
-                     All Items
+                     MANAGE ITEMS
                   </h1>
                   <hr
                      className="mb-5 mx-auto"
@@ -77,6 +116,7 @@ const ManageItems = () => {
                   <table className="w-100 mx-auto table">
                      <thead className="fs-4">
                         <tr>
+                           <th scope="col">#</th>
                            <th scope="col">Picture</th>
                            <th scope="col">Item Name</th>
                            <th scope="col">Price</th>
@@ -84,8 +124,9 @@ const ManageItems = () => {
                         </tr>
                      </thead>
                      <tbody className="fs-5">
-                        {products.map((product) => (
+                        {products.map((product, index) => (
                            <tr key={product._id}>
+                              <td className="">{index + 1}</td>
                               <td>
                                  <img
                                     style={{ width: "100px" }}
@@ -120,10 +161,6 @@ const ManageItems = () => {
             )}
          </div>
          <>
-            {/* <Button variant="primary" onClick={handleShow}>
-               Launch demo modal
-            </Button> */}
-
             <Modal show={show} onHide={handleClose}>
                <Modal.Header closeButton>
                   <Modal.Title>Delete Confirmation</Modal.Title>

@@ -11,6 +11,7 @@ import google from "../../images/google.png";
 import twitter from "../../images/twitter.png";
 import auth from "../firebase.init";
 import Loading from "../Loading/Loading";
+import { FaHome } from "react-icons/fa";
 
 const LogIn = () => {
    const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -96,6 +97,48 @@ const LogIn = () => {
             src="https://i.ibb.co/VNHKC7S/bg.jpg"
             alt=""
          />
+         <div
+            style={{
+               position: "absolute",
+               top: "120px",
+               left: "45%",
+               color: "white",
+            }}
+            className="nav-font"
+         >
+            <h1 style={{ fontWeight: 700 }}>LOGIN</h1>
+         </div>
+         <div
+            style={{
+               position: "absolute",
+               top: "180px",
+               left: "45%",
+               color: "white",
+            }}
+         >
+            <div className="d-flex">
+               <FaHome style={{ height: "20px", width: "20px" }} />
+               <p
+                  style={{
+                     fontSize: "20px",
+                     lineHeight: 0.9,
+                     marginLeft: "10px",
+                  }}
+               >
+                  /
+               </p>
+               <p
+                  style={{
+                     fontSize: "20px",
+                     lineHeight: 1,
+                     marginLeft: "10px",
+                  }}
+                  className="nav-font"
+               >
+                  LOGIN
+               </p>
+            </div>
+         </div>
          <h1 className="text-center fw-bold text-color mt-5 item-header">
             Please Login
          </h1>
