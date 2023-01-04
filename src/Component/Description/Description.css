@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+.desc-container {
+  display: flex;
+  margin: 70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.desc-container > div {
+  width: 50%;
+}
+
+.header {
+  font-family: "Abel", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.header-text {
+  font-family: "Abel", sans-serif;
+  font: 700;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .desc-container {
+    display: block;
+    margin: 20px;
+  }
+  .desc-container > div {
+    width: 100%;
+  }
+}

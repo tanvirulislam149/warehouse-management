@@ -30,7 +30,7 @@ const TopItems = () => {
       {data ? (
         <>
           <h1 className="text-center fw-bold text-color mt-5 item-header">
-            Top Items
+            Top Items We Store
           </h1>
           <hr
             className="mb-5 mx-auto"

@@ -85,14 +85,14 @@ const Header = () => {
                 >
                   My Items
                 </Link>
-                <button onClick={handleSignOut} className="login-btn link-font">
+                <button onClick={handleSignOut} className="login-btn text-white link-font">
                   Log Out
                 </button>
               </>
             ) : (
               <button className="login-btn">
                 <Link
-                  className="link-font text-decoration-none"
+                  className="link-font text-white text-decoration-none"
                   to="/login"
                 >
                   Login
