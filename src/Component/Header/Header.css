@@ -1,32 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
 .nav-bg {
-    background-color: #ecf2f9;
+  background-color: #ecf2f9;
 }
 
 .text-color {
-    color: #002266;
+  color: #002266;
 }
 
 .nav-font {
-    font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
 }
 
 .header-bg {
-    background-color: none;
+  background-color: none;
 }
 
 .link-color {
-    color: white;
+  color: white;
+}
+
+.link-font {
+  font-size: x-large;
+  color: white;
+}
+
+.login-btn {
+  background-color: #002266;
+  padding: 0px 20px;
+  border-radius: 10px;
+  border: none;
+  width: 120px;
+  margin: auto;
 }
 
 @media screen and (max-width: 576px) {
-    .header-bg {
-        background-color: white;
-        text-align: center;
-    }
+  .header-bg {
+    background-color: white;
+    text-align: center;
+  }
 
-    .link-color {
-        color: #002266;
-    }
+  .link-color {
+    color: #002266;
+  }
+  .link-font {
+    font-size: 28px;
+  }
+
+  .login-btn {
+    width: 150px;
+  }
 }
