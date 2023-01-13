@@ -27,20 +27,20 @@ const TopItems = () => {
 
   return (
     <div className="container my-5">
+      <h1 className="text-center fw-bold text-color mt-5 item-header">
+        Top Items We Store
+      </h1>
+      <hr
+        className="mb-5 mx-auto"
+        style={{
+          height: "5px",
+          color: "#002266",
+          width: "100px",
+          borderRadius: "5px",
+        }}
+      />
       {data ? (
         <>
-          <h1 className="text-center fw-bold text-color mt-5 item-header">
-            Top Items We Store
-          </h1>
-          <hr
-            className="mb-5 mx-auto"
-            style={{
-              height: "5px",
-              color: "#002266",
-              width: "100px",
-              borderRadius: "5px",
-            }}
-          />
           <Row xs={1} md={3} className="g-4">
             {items.map((item) => (
               <TopItem key={item._id} item={item}></TopItem>
