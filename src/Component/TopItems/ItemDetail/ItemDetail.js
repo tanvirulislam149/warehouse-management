@@ -2,6 +2,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
+import { FaHome } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ItemDetail = () => {
@@ -72,16 +73,31 @@ const ItemDetail = () => {
         src="https://i.ibb.co/VNHKC7S/bg.jpg"
         alt=""
       />
+      <div
+        style={{
+          position: "absolute",
+          marginLeft: "auto",
+          marginRight: "auto",
+          top: "120px",
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          color: "white",
+        }}
+        className="nav-font"
+      >
+        <h1 style={{ fontWeight: 700 }}><FaHome style={{ height: "40px", width: "40px", marginBottom: "10px" }} /> / ITEM DETAILS</h1>
+      </div>
       <Card className="mx-auto border-0">
         <div className="d-md-flex justify-content-center m-5">
-          <div className="w-md-50">
+          <div className="w-md-50 w-100">
             <Card.Img
-              className="w-md-75 mx-auto"
+              className="w-75"
               variant="top"
               src={item?.picture}
             />
           </div>
-          <div className="w-md-50">
+          <div className="w-md-50 w-100">
             <Card.Body>
               <Card.Title>{item?.name?.toUpperCase()}</Card.Title>
               <Card.Text>{item?.description}</Card.Text>

@@ -58,44 +58,17 @@ const MyItems = () => {
       <div
         style={{
           position: "absolute",
+          marginLeft: "auto",
+          marginRight: "auto",
           top: "120px",
-          left: "45%",
+          left: 0,
+          right: 0,
+          textAlign: "center",
           color: "white",
         }}
         className="nav-font"
       >
-        <h1 style={{ fontWeight: 700 }}>MY ITEMS</h1>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: "180px",
-          left: "46%",
-          color: "white",
-        }}
-      >
-        <div className="d-flex">
-          <FaHome style={{ height: "20px", width: "20px" }} />
-          <p
-            style={{
-              fontSize: "20px",
-              lineHeight: 0.9,
-              marginLeft: "10px",
-            }}
-          >
-            /
-          </p>
-          <p
-            style={{
-              fontSize: "20px",
-              lineHeight: 1,
-              marginLeft: "10px",
-            }}
-            className="nav-font"
-          >
-            MY ITEMS
-          </p>
-        </div>
+        <h1 style={{ fontWeight: 700 }}><FaHome style={{ height: "40px", width: "40px", marginBottom: "10px" }} /> / MY ITEMS</h1>
       </div>
       {data ? (
         <>
