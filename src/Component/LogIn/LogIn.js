@@ -24,6 +24,24 @@ const LogIn = () => {
 
   const [user, loading, error] = useAuthState(auth);
 
+  useEffect(() => {
+    if (googleUser) {
+      const email = googleUser?.user?.email;
+      console.log(email);
+      fetch(`https://depot-warehouse.onrender.com/getToken`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("accessToken", data.token);
+        });
+    }
+  }, [googleUser])
+
   const [email, setEmail] = useState();
 
   let navigate = useNavigate();
@@ -85,6 +103,12 @@ const LogIn = () => {
         localStorage.setItem("accessToken", data.token);
       });
   };
+
+  const googleSignIn = async () => {
+    await signInWithGoogle();
+  }
+
+
 
   const goToRegister = () => {
     navigate("/register");
@@ -172,7 +196,7 @@ const LogIn = () => {
         />
       </div>
       <button
-        onClick={() => signInWithGoogle()}
+        onClick={googleSignIn}
         className="bg-white border-1 px-5 py-3 mb-3 fw-bold"
         style={{ borderRadius: "50px", color: "#002266" }}
       >

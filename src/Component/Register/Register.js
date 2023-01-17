@@ -8,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { FaHome } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Register = () => {
   const [
@@ -23,6 +24,25 @@ const Register = () => {
 
   let navigate = useNavigate();
 
+  useEffect(() => {
+    if (user) {
+      navigate("/")
+      const email = user?.email;
+      console.log(email);
+      fetch(`https://depot-warehouse.onrender.com/getToken`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("accessToken", data.token);
+        });
+    }
+  }, [user])
+
   if (loading || sending) {
     return (
       <div>
@@ -37,29 +57,6 @@ const Register = () => {
     toast(creatingError?.message || verifingError?.message, {
       toastId: customId,
     });
-  }
-
-  if (user) {
-    if (user?.emailVerified) {
-      return (
-        <div className="text-center mt-5 pt-5">
-          <h1 className="">Welcome To DEPOT</h1>
-          <button
-            onClick={() => navigate("/")}
-            className="update-btn mt-2"
-          >
-            {" "}
-            Go to Home Page
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div className="text-center mt-5 pt-5">
-          <h1>Your Email is not Verified.</h1>
-        </div>
-      );
-    }
   }
 
   const handleRegister = async (event) => {
