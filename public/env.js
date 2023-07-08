@@ -1,7 +1,7 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\tanvi\\AppData\\Roaming",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_2620_MQMWYWQSCHISYIUT",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_14256_SDFDXWOPRVHGXXEI",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
@@ -67,7 +67,7 @@ window.env = {
   "SystemRoot": "C:\\WINDOWS",
   "TEMP": "C:\\Users\\tanvi\\AppData\\Local\\Temp",
   "TERM_PROGRAM": "vscode",
-  "TERM_PROGRAM_VERSION": "1.74.3",
+  "TERM_PROGRAM_VERSION": "1.76.0",
   "TMP": "C:\\Users\\tanvi\\AppData\\Local\\Temp",
   "USERDOMAIN": "Tanvir",
   "USERDOMAIN_ROAMINGPROFILE": "Tanvir",

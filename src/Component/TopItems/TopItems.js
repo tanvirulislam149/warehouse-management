@@ -10,6 +10,7 @@ import Loading from "../Loading/Loading";
 const TopItems = () => {
   const [items, setItems] = useState([]);
   const [data, setData] = useState(false);
+  console.log(items);
 
   useEffect(() => {
     fetch("https://depot-warehouse.onrender.com/items")

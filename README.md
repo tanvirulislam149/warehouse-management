@@ -2,7 +2,7 @@
 
 A website about a warehouse company that stores fruits, vegetables and oil.
 
-Click here to see [LIVE SITE](https://warehouse-management-eb91a.web.app).
+Click here to see [LIVE SITE](https://warehouse-management-client.vercel.app/).
 
 ### Features of this Website
 * User Can login and Register here.
